@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Manrope:wght@400&display=swap" rel="stylesheet">    
+    <title>Quadro Nº 2</title>
+    <style>
+      :root {
+        --main-border-color: #1a1a1a;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Manrope', sans-serif;
+        font-size: 12px;
+      }
+      body {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      #artist-name {
+        width: 400px;
+        text-align: left;
+      }
+      h1 {
+        margin-top: 35px;
+        margin-bottom: 5px;
+        font-size: 2rem;
+        font-weight: 100;
+        letter-spacing: 7px;
+        color: #1a1a1a;
+      }
+      hr {
+        height: 3px;
+        width: 400px;
+        background-color: #1a1a1a;
+      }
+      #grid-container {
+        height: 525px;
+        width: 400px;
+        margin-top: 35px;
+        margin-bottom: 40px;
+        display: grid;
+        border: 10px solid #1a1a1a;
+        grid-template: repeat(90, 1fr) / repeat(74, 1fr);
+        box-shadow: 0 0 20px black;
+      }
+      .yellow {
+        background-color: #e3c42c;
+      }
+      .red {
+        background-color: #e22e16;
+      }
+      .beige {
+        background-color: #eee2be;
+      }
+      .blue {
+        background-color: #4590b8;
+      }
+      .black {
+        background-color: #1a1a1a;
+      }
+      .one{
+        grid-area: 1 / 1 / 16 / 6;
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .two{
+        grid-area: 1 / 6 / 16 / 32;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 10px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .three{
+        grid-area: 1 / 32 / 16 / 47;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 10px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .four{
+        grid-area: 1 / 47 / 8 / 75;
+        border-left: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .five {
+        grid-area: 16 / 1 / 84 / 6;
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .six {
+        grid-area: 16 / 6 / 48 / 32;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .seven {
+        grid-area: 16 / 32 / 48 / 47;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .eight {
+        grid-area: 8 / 47 / 35 / 75;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .nine {
+        grid-area: 35 / 47 / 48 / 69;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .ten {
+        grid-area: 35 / 69 / 67 / 75;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .eleven {
+        grid-area: 48 / 6 / 55 / 32;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .twelve {
+        grid-area: 48 / 32 / 67 / 47;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .thirteen {
+        grid-area: 48 / 47 / 67 / 69;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .fourteen {
+        grid-area: 55 / 6 / 84 / 32;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      } 
+      .fifteen {
+        grid-area: 67 / 32 / 84 / 58;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .sixteen {
+        grid-area: 67 / 58 / 84 / 69;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .seventeen {
+        grid-area: 67 / 69 / 84 / 75;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .eighteen {
+        grid-area: 84 / 1 / 91 / 6;
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+      }
+      .nineteen {
+        grid-area: 84 / 6 / 90 / 56;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-right: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+      }
+      .twenty {
+        grid-area: 84 / 56 / 90 / 75;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+        border-bottom: 5px solid var(--main-border-color);
+        display: flex;
+        align-items: flex-end;
+      }
+      #sig-container {
+        height: 80%;
+        width: 90%;
+      }
+      #sig-container img {
+        width: 100%;
+      }
+      .twenty-one {
+        grid-area: 90 / 6 / 91 / 75;
+        border-left: 5px solid var(--main-border-color);
+        border-top: 5px solid var(--main-border-color);
+      }
+      #title-year {
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+      }
+      h2 {
+        margin-top: 10px;
+        font-size: 1rem;
+        letter-spacing: 2px;;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="artist-name">
+      <h1>PIET MONDRIAN</h1>
+    </div>
+    <hr>
+    <section id="grid-container">
+      <div class="one yellow"></div>
+      <div class="two red"></div>
+      <div class="three beige"></div>
+      <div class="four beige"></div>
+      <div class="five beige"></div>
+      <div class="six blue"></div>
+      <div class="seven black"></div>
+      <div class="eight yellow"></div>
+      <div class="nine beige"></div>
+      <div class="ten black"></div>
+      <div class="eleven beige"></div>
+      <div class="twelve red"></div>
+      <div class="thirteen red"></div>
+      <div class="fourteen beige"></div>
+      <div class="fifteen blue"></div>
+      <div class="sixteen beige"></div>
+      <div class="seventeen beige"></div>
+      <div class="eighteen beige"></div>
+      <div class="nineteen yellow"></div>
+      <div class="twenty beige">
+        <div id="sig-container">
+          <img src="./piet-sig-removebg.png" alt="Piet Mondrian signature">
+        </div>
+      </div>
+      <div class="twenty-one beige"></div>
+    </section>
+    <hr>
+    <div id="title-year">
+      <h2>QUADRO Nº 2</h2>
+      <h2>1920</h2>
+    </div>
+  </body>
+</html>
